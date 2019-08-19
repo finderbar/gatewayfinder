@@ -21,12 +21,15 @@
   },
   "homepage": "https://github.com/finderbar/gatewayfinder#readme",
   "dependencies": {
+    "bluebird": "^3.5.5",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^14.4.2",
     "graphql-rabbitmq-subscriptions": "^1.1.0",
-    "graphql-subscriptions": "^1.1.0"
+    "graphql-subscriptions": "^1.1.0",
+    "query-string": "^6.8.2",
+    "underscore": "^1.9.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.5.5"
