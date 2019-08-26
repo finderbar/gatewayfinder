@@ -5,6 +5,7 @@ import cors from 'cors';
 import { execute, subscribe } from 'graphql';
 import { SubscriptionServer } from 'subscriptions-transport-ws';
 import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
+import { schema } from './server';
 
 const WS_GQL_PATH = '/subscriptions';
 const GRAPHQL_PORT = '4000';
@@ -14,11 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('*', cors());
 
-// geteway endpoint
 app.use('/graphql',
   bodyParser.json(),
   graphqlExpress((req) => ({
-    schema: xxxxx, //
+    schema: schema, //
     context: req.context,
     pretty: true,
     graphiql: true,
@@ -33,7 +33,6 @@ app.use('/graphql',
   }))
 );
 
-// showing graphql with playground in browser
 app.use('/playground', graphiqlExpress({
     endpointURL: '/graphql',
     subscriptionsEndpoint: 'wsGqlURL'
