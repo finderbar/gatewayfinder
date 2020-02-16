@@ -1,9 +1,0 @@
-type Movie {
-    id: Int!
-    title: String!
-    rating: Float!
-}
-
-type Query {
-    movies(limit: Int, minRating: Float): [Movie]!
-}
